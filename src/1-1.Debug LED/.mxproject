@@ -16,6 +16,7 @@ HeaderFiles#3=E:/git/ST-Firmware/src/1-1.Debug LED/Core/Inc/stm32f4xx_hal_conf.h
 HeaderFiles#4=E:/git/ST-Firmware/src/1-1.Debug LED/Core/Inc/main.h
 SourceFiles#3=E:/git/ST-Firmware/src/1-1.Debug LED/Core/Src/stm32f4xx_hal_msp.c
 SourceFiles#4=E:/git/ST-Firmware/src/1-1.Debug LED/Core/Src/main.c
+HeaderFiles#5=E:/git/ST-Firmware/src/1-1.Debug LED/Core/Inc/main.h
 HeaderFiles=;
 SourceFiles=;
 
