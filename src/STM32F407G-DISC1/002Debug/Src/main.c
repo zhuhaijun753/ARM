@@ -87,15 +87,10 @@ void insertion_sort(int *pNumbers , unsigned int len)
 
          pNumbers[j+1]=num;
      }
-
-
 }
-
-
 
 int main()
 {
-
     unsigned int len = sizeof(numbers)/sizeof(int);
 
     array_fill_numbers(numbers,len);
