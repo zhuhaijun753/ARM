@@ -1,8 +1,8 @@
-title: FW
+title: ARM FW
 author: ingbeeedd
 email: yeongjae8066@daum.net
 description: > # this means to ignore newlines until "show_exerpts:"
-  about ingbeeedd Firmware
+  about ARM FW
 show_excerpts: true # set to true to show excerpts on the homepage
 
 # Minima date format
@@ -11,7 +11,7 @@ sass:
   sass_dir: _sass
 plainwhite:
   name: Yeong Jae You
-  tagline: F/W Developer
+  tagline: F/W / Linux Developer
   date_format: "%b %-d, %Y"
   # sitemap: true # set to true to generate sitemap.xml content
 
