@@ -8,9 +8,6 @@ categories: ST Bootloader
 이 포스팅은 `ST 보드의 Bootloader와 관련한` 포스팅임을 알려드립니다.
 
 ---
-실제 Keil에서 ...
-
----
 ### KEIL-MDK5
 
 기존의 이클립스 기반의 IDE는 모든 OS에서 사용할 수 있다는 장점이 있지만, 사용자가 시스템과 MCU를 이해하고 있어야만 확장이 쉽게 가능하다. 따라서, Window에서만 사용이 가능하지만 더 편리한 KEIL-MDK5를 사용하도록 할 것이다.
