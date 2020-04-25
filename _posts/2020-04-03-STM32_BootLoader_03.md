@@ -80,3 +80,15 @@ categories: ST Bootloader
 
 
     ![13](https://drive.google.com/uc?id=1ec2MyP7qQON-QBeXxekQg5VnHKatypyW)
+
+
+---
+### LED blink
+
+1. 현재 테스트 보드는 429ZI-DISC1다. 먼저 보드의 User-Manual 문서를 열도록 한다. 문서 하단으로 내려가면 회로도를 볼 수 있는데, 2개의 LED를 찾도록 한다. PG13, PG14가 핀 번호로 보여진다. [링크](https://www.st.com/resource/en/user_manual/dm00093903-discovery-kit-with-stm32f429zi-mcu-stmicroelectronics.pdf)는 다음과 같다
+
+
+    ![14]()
+
+
+2. 

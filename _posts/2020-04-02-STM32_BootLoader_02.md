@@ -8,7 +8,24 @@ categories: ST Bootloader
 이 포스팅은 `ST 보드의 Bootloader와 관련한` 포스팅임을 알려드립니다.
 
 ---
-실제 Keil에서 ...
+### Memory View
+
+MCU가 리셋이 되면, 프로세서의 PC는 0번지를 가리키게 된다. 그리고 0번지에 위치한 값을 처음에 읽게 된다. 이때 MSP(Main Stack Pointer)는 0번지 값이 되게 된다. 그리고 다음 4번지는 리셋 핸들러의 주소를 가리킨다. 그래서 그 주소로 Jump를 하게 된다.
+
+그런데 이상한 점은 ST는 bootloader가 기본적으로 flash로 되어있는데, 이는 0x0800_0000이다. 하지만 실제 코어는 0x0000_0000에서 시작하게 된다. 이는 Aliasing으로 가능한 얘기가 된다
+
+
+![03](https://drive.google.com/uc?id=1MwI7K2_1Do_YL5It7R3GP2VlLufhV_vD)
+
+
+![04](https://drive.google.com/uc?id=1LGKGV8VI5Nv57CAEmU-R5gSi1ZeSgGrq)
+
+
+실제로 0번지를 찍어보면 똑같게 나온다
+
+
+![05](https://drive.google.com/uc?id=1IjeAOhCNvc3uvfJuYcuo8l8UHa1tGOSP)
+
 
 ---
 ### Boot Configuration
