@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[Bootloader] 개발 환경 구성"
+title:  "[Bootloader] ST 시스템 메모리 부트로더 실행"
 date:   2020-04-04
 categories: ST Bootloader
 ---
@@ -75,4 +75,4 @@ USART1 bootloader를 이용해, 부트로더와 통신할 것이다. 실제로 S
 ![11](https://drive.google.com/uc?id=1rdvJNq8yqT074xKlyEvxw1-QCpALiAL3)
 
 
-그리고 넘어가면 다운로드가 올바르게 될 것이다. 이 때 바로 user application으로 메모리가 넘어가게 된다
+그리고 넘어가면 다운로드가 올바르게 될 것이다. 이 때 바로 user application으로 메모리가 넘어가게 된다. 다시 시스템 메모리 부팅 옵션으로 넘어가려면, 리셋 버튼을 눌러야만 한다

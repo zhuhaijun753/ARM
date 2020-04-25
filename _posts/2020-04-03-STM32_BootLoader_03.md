@@ -88,7 +88,49 @@ categories: ST Bootloader
 1. 현재 테스트 보드는 429ZI-DISC1다. 먼저 보드의 User-Manual 문서를 열도록 한다. 문서 하단으로 내려가면 회로도를 볼 수 있는데, 2개의 LED를 찾도록 한다. PG13, PG14가 핀 번호로 보여진다. [링크](https://www.st.com/resource/en/user_manual/dm00093903-discovery-kit-with-stm32f429zi-mcu-stmicroelectronics.pdf)는 다음과 같다
 
 
-    ![14]()
+    ![14](https://drive.google.com/uc?id=1ctxmbl3kJfN-U245GQmE3q4POiZ4K-dN)
 
 
-2. 
+2. 그리고 KEIL에서는 보드에 한정해 BSP Example을 제공해주고 있다. 실제로 429ZI-DISC1 또한 간단한 Example을 제공받게 된다. 현재 아래 사진은 469 보드로 되어 있다. 이는 잘못된 사진으로 반드시 429 보드로 다시 설정해야만 한다
+
+    
+    ![15](https://drive.google.com/uc?id=12CYcUdtNXGozEaUg7PSalac8x0-f72_J)
+
+
+    ![16](https://drive.google.com/uc?id=1Cp_llOwZ4w8Bj_-CLNvIuv7dnpj7zFgm)
+
+
+    그리고 classic과 CubeMx 선택란이 있는데 classic으로 선택한다. CubeMx를 선택하면 해당 소프트웨어로 넘어가 남은 configuration을 진행하게 된다
+
+
+    ![17](https://drive.google.com/uc?id=17cAkGV0Ci81EmA5wwN6tvE9BhPo_A5sv)
+
+
+    다음은 보드 이름을 정정한 사진이다
+
+
+    ![19](https://drive.google.com/uc?id=1HTuwPqqUyTwe54vnWhE6WHQtmKdrwl1y)
+
+
+3. 그리고 다음 BSP 소스코드를 참조해서, LED를 켜보도록 한다
+
+
+    ![20](https://drive.google.com/uc?id=1uxW6_J55jfR9YjlMNdQriavX5AnBgooL)
+
+
+    ![21](https://drive.google.com/uc?id=1mCs8ogPWf0LLPqq17AOyfUJRMAaCGLBm)
+
+
+    ![22](https://drive.google.com/uc?id=1_WY1RAN3beOhrXBOuB-DZiADJ30RhGK2)
+
+
+4. 그리고 빌드 옵션을 설정해야 하는데, 크게는 ST-LINK 디버거 설정이다
+
+
+    ![23](https://drive.google.com/uc?id=1vJS1aRxHZlcKRh2C5fAIJx2pJlfy3unk)
+
+
+    ![24](https://drive.google.com/uc?id=1Zu_MiNtUu90aqqhKZKfvqfZ-F5x6rqp8)
+
+
+    ![25](https://drive.google.com/uc?id=1zBnydLaKwwmOBN7j3icwytHRD-rCnHaX)
