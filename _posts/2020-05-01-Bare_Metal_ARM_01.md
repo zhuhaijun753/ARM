@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "bare_metal for ARM Target"
+title:  "[Bare Metal Embedded] Build Process"
 date:   2020-05-01
 categories: ARM bare_metal
 ---
@@ -11,9 +11,6 @@ categories: ARM bare_metal
 ### Bare metal
 
 임베디드 시스템에서 베어메탈은 운영체제 환경이 없는 하드웨어 환경을 말한다. 보통 이런 환경을 기본적인 펌웨어 환경이라고 일컫는다. 다시 말해 하나의 while 루프에서 실행되는 펌웨어를 작성하게 된다. 일반적인 베어메탈 프로그램에는 최소 부트로더가 있고, 이는 응용 프로그램으로 넘어가게 된다
-
-
-
 
 ---
 ### ToolChain
