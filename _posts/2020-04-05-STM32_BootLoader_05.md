@@ -79,3 +79,22 @@ categories: ST Bootloader
 ---
 ### 코드 분석
 
+CubeMX로 만든 코드에 대해서 한 줄씩 분석하려고 한다. 초기에 while문을 들어가기 전 초기화를 진행하게 되는데, CubeMX에서 설정한 Peripheral들이 보이게 된다
+
+
+![13](https://drive.google.com/uc?id=1-fdZxw-2sViBI-5rpdItbDgMiU4UhkVN)
+
+
+그리고 `SystemClock_Config`에서 현재 클럭은 HSI 내부 오실레이터를 사용하며, PLL로 60Mhz까지 클럭을 올려준 것을 볼 수 있다
+
+
+![14](https://drive.google.com/uc?id=1CVlHTSjPD9O9p6zpTIYPayr5wp6FBcog)
+
+
+그리고 `HAL init`에서는 Flash 초기화 및 Systick 1ms 타이머를 초기화 하는 것을 볼 수 있다
+
+
+![15](https://drive.google.com/uc?id=191zfGOTllqK5oYuiQHdVDrHUk3mqEdcr)
+
+
+![16](https://drive.google.com/uc?id=1oux8i0a8LE3m8_MeHXaL2U2KSbG39VzA)

@@ -381,17 +381,15 @@
       <Groups>
         <Group>
           <GroupName>Application/MDK-ARM</GroupName>
+        </Group>
+        <Group>
+          <GroupName>Application/User</GroupName>
           <Files>
             <File>
               <FileName>startup_stm32f429xx.s</FileName>
               <FileType>2</FileType>
               <FilePath>startup_stm32f429xx.s</FilePath>
             </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>Application/User</GroupName>
-          <Files>
             <File>
               <FileName>main.c</FileName>
               <FileType>1</FileType>

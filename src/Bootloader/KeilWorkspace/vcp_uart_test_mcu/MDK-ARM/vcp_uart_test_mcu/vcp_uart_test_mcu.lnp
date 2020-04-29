@@ -1,0 +1,26 @@
+--cpu=Cortex-M4.fp.sp
+"vcp_uart_test_mcu\startup_stm32f429xx.o"
+"vcp_uart_test_mcu\main.o"
+"vcp_uart_test_mcu\stm32f4xx_it.o"
+"vcp_uart_test_mcu\stm32f4xx_hal_msp.o"
+"vcp_uart_test_mcu\stm32f4xx_hal_tim.o"
+"vcp_uart_test_mcu\stm32f4xx_hal_tim_ex.o"
+"vcp_uart_test_mcu\stm32f4xx_hal_uart.o"
+"vcp_uart_test_mcu\stm32f4xx_hal_rcc.o"
+"vcp_uart_test_mcu\stm32f4xx_hal_rcc_ex.o"
+"vcp_uart_test_mcu\stm32f4xx_hal_flash.o"
+"vcp_uart_test_mcu\stm32f4xx_hal_flash_ex.o"
+"vcp_uart_test_mcu\stm32f4xx_hal_flash_ramfunc.o"
+"vcp_uart_test_mcu\stm32f4xx_hal_gpio.o"
+"vcp_uart_test_mcu\stm32f4xx_hal_dma_ex.o"
+"vcp_uart_test_mcu\stm32f4xx_hal_dma.o"
+"vcp_uart_test_mcu\stm32f4xx_hal_pwr.o"
+"vcp_uart_test_mcu\stm32f4xx_hal_pwr_ex.o"
+"vcp_uart_test_mcu\stm32f4xx_hal_cortex.o"
+"vcp_uart_test_mcu\stm32f4xx_hal.o"
+"vcp_uart_test_mcu\stm32f4xx_hal_exti.o"
+"vcp_uart_test_mcu\system_stm32f4xx.o"
+--library_type=microlib --strict --scatter "vcp_uart_test_mcu\vcp_uart_test_mcu.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "vcp_uart_test_mcu.map" -o vcp_uart_test_mcu\vcp_uart_test_mcu.axf
