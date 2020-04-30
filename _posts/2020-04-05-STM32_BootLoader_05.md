@@ -98,3 +98,9 @@ CubeMX로 만든 코드에 대해서 한 줄씩 분석하려고 한다. 초기�
 
 
 ![16](https://drive.google.com/uc?id=1oux8i0a8LE3m8_MeHXaL2U2KSbG39VzA)
+
+
+그리고 USART1은 ST-LINK 포트인 VCP와 연결되어 있다. 따라서 따로 컨버터를 연결할 필요가 없다
+
+
+![17](https://drive.google.com/uc?id=1BcTP_IMjJT0LHipYKu35Op41X9BWDRhv)
