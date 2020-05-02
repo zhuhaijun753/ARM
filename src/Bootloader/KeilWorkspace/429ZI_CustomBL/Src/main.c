@@ -76,7 +76,7 @@ int main(void)
   HAL_Init();
 
   /* USER CODE BEGIN Init */
-	uint8_t msg[] = "Hello Make BootLoader\r\n"; 
+	// uint8_t msg[] = "Hello Make BootLoader\r\n"; 
   /* USER CODE END Init */
 
   /* Configure the system clock */
@@ -113,13 +113,6 @@ int main(void)
   /* USER CODE END 3 */
 }
 
-
-void jump_to_user_app(void)
-{
-		
-}
-
-
 /**
   * @brief System Clock Configuration
   * @retval None
@@ -141,7 +134,7 @@ void SystemClock_Config(void)
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSI;
   RCC_OscInitStruct.PLL.PLLM = 8;
-  RCC_OscInitStruct.PLL.PLLN = 60;
+  RCC_OscInitStruct.PLL.PLLN = 84;
   RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV2;
   RCC_OscInitStruct.PLL.PLLQ = 7;
   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
@@ -157,14 +150,27 @@ void SystemClock_Config(void)
   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV2;
   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV4;
 
-  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_1) != HAL_OK)
+  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_2) != HAL_OK)
   {
     Error_Handler();
   }
 }
 
 /* USER CODE BEGIN 4 */
+#define USER_APP_FLASH_BASE_ADDR	0x08008000
 
+void jump_to_user_app(void) {
+	void (*app_reset_handler)(void);
+	
+	uint32_t msp_value = *(volatile uint32_t *)(USER_APP_FLASH_BASE_ADDR);
+	
+	__set_MSP(msp_value);
+	
+	uint32_t reset_handler_addr = *(volatile uint32_t*)(USER_APP_FLASH_BASE_ADDR + 4);
+	app_reset_handler = (void *)reset_handler_addr;
+	
+	app_reset_handler();
+}
 /* USER CODE END 4 */
 
 /**

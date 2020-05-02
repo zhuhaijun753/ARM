@@ -110,7 +110,58 @@ categories: ST Bootloader
 3. 그리고 BootLoader 코드를 다운로드 하도록 한다. 그리고 ST-LINK Utility를 열어서, 0x08000000을 확인하도록 한다
 
 
-    ![17](https://drive.google.com/uc?id=1D0JejJA9Y3vdK-ipqQgk_oFPTuNNTfHW
+    ![17](https://drive.google.com/uc?id=1D0JejJA9Y3vdK-ipqQgk_oFPTuNNTfHW)
 
 
-4. 
+---
+### VTOR
+
+VTOR은 Vector Table Offset Register로 이미 ST의 칩의 VTOR은 플래시 메모리의 주소인 0x08000000임을 알 수 있었다. 그런데 현재 다음 그림을 보면 프로젝트 2개가 하나의 FLASH에 내장되어 있고, 다음과 같이 표현할 수 있다
+
+
+![18](https://drive.google.com/uc?id=14UGlvdW4inSE_vX4wQ40sZNimgN83Z3q)
+
+
+그래서 만일 Bootloader에서 App으로 뛰는 순간 VTOR을 바꿔줘야 한다. 따라서 VTOR은 플래시 메모리의 섹터 2의 시작주소가 되어야만 한다. __그리고 반드시 Startup 코드에 VTOR을 설정하는 부분이 있다. Default로는 0x00으로 되어있는데, 0x8000으로 수정하도록 한다. 먼저 Startup 코드에서 SystemInit 함수를 찾고, 거기서 VTOR을 설정하는 부분을 검색해야만 한다__ 
+
+
+![19](https://drive.google.com/uc?id=1bJy1p2_B0Kzwwza2Gh0uHgFK3caNKPdF)
+
+
+![20](https://drive.google.com/uc?id=1K80w3RH_umMzSsAwQGzGFfhDuUB1DKYi)
+
+---
+### Jump to User App
+
+그러면 사전에 작성했던 `jump_to_user_app` 함수에 대해서 작성해보려고 한다. 플래시 메모리 섹터 2의 MSP와 리셋 핸들러 주소를 지정해주는 것을 볼 수 있다. __set_MSP 함수 안에 들여다보면 결국에는 `msp` 어셈블러로 설정하는 것을 볼 수 있다
+
+
+```cpp
+#define USER_APP_FLASH_BASE_ADDR	0x8008000
+
+void jump_to_user_app(void) {
+	void (*app_reset_handler)(void);
+	
+	uint32_t msp_value = *(volatile uint32_t *)(USER_APP_FLASH_BASE_ADDR);
+	
+	__set_MSP(msp_value);
+	
+	uint32_t reset_handler_addr = *(volatile uint32_t*)(USER_APP_FLASH_BASE_ADDR + 4);
+	app_reset_handler = (void *)reset_handler_addr;
+	
+	app_reset_handler();
+}
+```
+
+그리고 APP 코드에서 인터럽트를 통한 LED 토글을 실행하면 다음과 같이 실행을 시킬 수 있다. LED 토글 시 flag라는 변수로 write 하는 것이 올바른 방법이다.
+
+
+![21](https://drive.google.com/uc?id=1RmiLqD6xeOSW04vkWXxWjyiSoHPARSUZ)
+
+
+
+
+
+
+
+
