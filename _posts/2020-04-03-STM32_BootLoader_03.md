@@ -139,13 +139,31 @@ categories: ST Bootloader
 ---
 ### OpenSTM32 System-Workbench 설치
 
-위에서 설치한 KEIL은 윈도우에서만 사용이 가능한 IDE다. 따라서 다른 운영체제라면 다른 IDE를 고려해야만 한다. 그 중 하나가 `OpenSTM32 System-Workbench`로 생각할 수 있다. 이 소프트웨어는 윈도우, 리눅스, 맥 모두 지원하고 있다. 설치를 위해 위 [링크](openstm32.org/HomePage)로 접속한 이후 계정을 생성해서 등록하고, 원하는 OS용을 다운로드 받도록 한다
+1. 위에서 설치한 KEIL은 윈도우에서만 사용이 가능한 IDE다. 따라서 다른 운영체제라면 다른 IDE를 고려해야만 한다. 그 중 하나가 `OpenSTM32 System-Workbench`로 생각할 수 있다. 이 소프트웨어는 윈도우, 리눅스, 맥 모두 지원하고 있다. 설치를 위해 위 [링크](openstm32.org/HomePage)로 접속한 이후 계정을 생성해서 등록하고, 원하는 OS용을 다운로드 받도록 한다
 
 
-![26]()
+    ![26](https://drive.google.com/uc?id=1IfNPIC1MkceQzFOsu6J4Z5d7yVmw17pm)
 
 
-그리고 설치파일을 실행시켜 다운로드 받도록 한다
+2. 그리고 설치파일을 실행시켜 다운로드 받도록 한다
 
 
-![27]()
+    ![27](https://drive.google.com/uc?id=1cKX2VEvrAGqejbIZs-ODWyvpZX6WgPb0)
+
+
+3. 모든 설정은 기본적으로 진행하도록 한다. 그러면 실행파일과 드라이버 설치가 이뤄질 것이다
+
+
+    ![28](https://drive.google.com/uc?id=1rWlVEF06LIu9bgrcwm4npHI8_xUqhHl9)
+
+
+    ![29](https://drive.google.com/uc?id=16jT09hXsNRASOxsQDYv1uU7B3n_BaAs6)
+
+
+4. 설치가 모두 완료되면, 기본 경로(C:\Ac6\SystemWorkbench)인 곳에 Eclipse Workbench 실행파일이 생성되었을 것이다. 실행시켜, 원하는 폴더를 지정한 후 실행시킨다. 처음 시작한다면 윈도우 용 ARM 툴체인을 자동적으로 설치하니까 중간에 끄지 말아야 한다
+
+
+    ![30](https://drive.google.com/uc?id=1hulSF_yerwlLFzmEXUQY1jFlQZEZC8LF)
+
+
+    ![31](https://drive.google.com/uc?id=1cb-tSQL3hcDgMtkzwvc8nLWsE9o3UYRb)

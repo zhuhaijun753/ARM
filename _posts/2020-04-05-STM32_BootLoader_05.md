@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[Bootloader] Custom BootLoader 개요"
+title:  "[Bootloader] Custom BootLoader 블록다이어그램 개요"
 date:   2020-04-05
 categories: ST Bootloader
 ---

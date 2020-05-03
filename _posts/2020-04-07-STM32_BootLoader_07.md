@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[Bootloader] BootLoader와 App 코드 연결"
+title:  "[Bootloader] Bootloader에서 App 코드로 점프하기"
 date:   2020-04-07
 categories: ST Bootloader
 ---
@@ -153,15 +153,8 @@ void jump_to_user_app(void) {
 }
 ```
 
+
 그리고 APP 코드에서 인터럽트를 통한 LED 토글을 실행하면 다음과 같이 실행을 시킬 수 있다. LED 토글 시 flag라는 변수로 write 하는 것이 올바른 방법이다.
 
 
 ![21](https://drive.google.com/uc?id=1RmiLqD6xeOSW04vkWXxWjyiSoHPARSUZ)
-
-
-
-
-
-
-
-

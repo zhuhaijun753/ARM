@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[Bootloader] Command, Debug UART Test"
+title:  "[Bootloader] Command, Debug UART 통신 Test"
 date:   2020-04-06
 categories: ST Bootloader
 ---

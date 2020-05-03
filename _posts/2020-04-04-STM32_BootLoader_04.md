@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[Bootloader] ST 시스템 메모리 부트로더 실행"
+title:  "[Bootloader] ST 시스템 메모리 내장 부트로더 실행"
 date:   2020-04-04
 categories: ST Bootloader
 ---
@@ -51,10 +51,30 @@ USART1 bootloader를 이용해, 부트로더와 통신할 것이다. 실제로 S
 ![07](https://drive.google.com/uc?id=1YiPY3r06eJHX5On6DigUM5HnKHXv6WCd)
 
 
+__그리고 RCC는 USART 사용 시 60MHz로 설정이 되어있어야 하는데, 이는 시스템 내장 부트로더에 이미 설정이 되어 있을 것이다.__
+
+
+![08_3](https://drive.google.com/uc?id=1aMKbsN60da42oGxRDz5zJPeMyFZ75LY-)
+
+
 ---
 ### Download STM32 FLAHSER
 
-해당 [링크](https://www.st.com/en/development-tools/flasher-stm32.html)로 가서 STM32-FLAHSER를 다운로드 받도록 한다. 이 소프트웨어는 UART 통신을 통해서 시스템 메로리에 있는 STM32 부트로더와 통신하는 것이다. 다운로드가 완료되면 실행파일을 켜도록 한다
+해당 [링크](https://www.st.com/en/development-tools/flasher-stm32.html)로 가서 STM32-FLAHSER를 다운로드 받도록 한다. 이 소프트웨어는 UART 통신을 통해서 시스템 메모리에 있는 STM32 부트로더와 통신하는 것이다. 실행 전에 해당 소프트웨어에 대한 설명을 읽어보도록 한다
+
+UART 프로토콜을 이용한 부트로더 프로그램이며 프로그램 Write가 가능한 소프트웨어다. 윈도우 한정 프로그램이라고 소개가 되어 있다
+
+
+![08_1](https://drive.google.com/uc?id=1JjS7s1dhNu62Z8eLN69ix9CW1J_XATlG)
+
+
+해당 [링크](https://www.st.com/resource/en/application_note/cd00264342-usart-protocol-used-in-the-stm32-bootloader-stmicroelectronics.pdf)로 가면 UART 부트로더에 대한 설명이 자세히 설명되어 있다
+
+
+![08_2](https://drive.google.com/uc?id=1Mq_mQPYTaggoFN9i0P665gf_xuM3Ydli)
+
+
+ 다운로드가 완료되면 실행파일을 켜도록 한다.
 
 
 ![08](https://drive.google.com/uc?id=1N2_4wQzjyEwraIUBgyZ15-L3To52ZgBV)

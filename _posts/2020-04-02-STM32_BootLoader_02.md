@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[Bootloader] STM32 Boot Configuration"
+title:  "[Bootloader] STM32 Boot Configuration 살펴보기"
 date:   2020-04-02
 categories: ST Bootloader
 ---

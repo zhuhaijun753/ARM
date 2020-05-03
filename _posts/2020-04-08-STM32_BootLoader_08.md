@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[Bootloader] Bootloader 커맨드 정의 및 버전 읽기"
+title:  "[Bootloader] Bootloader 커맨드 데이터 포맷 정의 및 버전 읽기"
 date:   2020-04-08
 categories: ST Bootloader
 ---
