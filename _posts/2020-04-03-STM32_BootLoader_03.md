@@ -134,3 +134,18 @@ categories: ST Bootloader
 
 
     ![25](https://drive.google.com/uc?id=1zBnydLaKwwmOBN7j3icwytHRD-rCnHaX)
+
+
+---
+### OpenSTM32 System-Workbench 설치
+
+위에서 설치한 KEIL은 윈도우에서만 사용이 가능한 IDE다. 따라서 다른 운영체제라면 다른 IDE를 고려해야만 한다. 그 중 하나가 `OpenSTM32 System-Workbench`로 생각할 수 있다. 이 소프트웨어는 윈도우, 리눅스, 맥 모두 지원하고 있다. 설치를 위해 위 [링크](openstm32.org/HomePage)로 접속한 이후 계정을 생성해서 등록하고, 원하는 OS용을 다운로드 받도록 한다
+
+
+![26]()
+
+
+그리고 설치파일을 실행시켜 다운로드 받도록 한다
+
+
+![27]()
