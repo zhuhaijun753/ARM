@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[Bootloader] Custom BootLoader 블록다이어그램 개요"
+title:  "[Bootloader] Custom BootLoader 블록 다이어그램 개요"
 date:   2020-04-05
 categories: ST Bootloader
 ---
@@ -10,7 +10,7 @@ categories: ST Bootloader
 ---
 ### Block Diagram
 
-전에 Native BootLoader를 실행해봤다. 이제 Custom 부트로더를 만들어보려고 한다. 큰 Block Diagram은 다음과 같다
+전에 Native BootLoader를 실행해봤다. 이제 Custom 부트로더를 만들어보려고 한다. 큰 Block Diagram은 다음과 같다. __429ZI-DISC1으로 보드를 바꾸다보니, 기본 커맨드 통신은 USART1(VCP)로 나머지는 크게 방해되지 않는 선에서 아무 UART로 설정하려고 한다
 
 
 ![01](https://drive.google.com/uc?id=1kM6vdEHMLCI8bn6P53VrdGp9hYEBVaqx)
@@ -22,7 +22,7 @@ categories: ST Bootloader
 ![02](https://drive.google.com/uc?id=1ktNn-ePV5ADCpjv7pS2Ly1HGscwmqKan)
 
 
-그리고 자세한 부트로더 커맨드는 [다음](https://github.com/niekiran/BootloaderProjectSTM32/blob/master/Docs/Bootloader%20Commands.pdf)을 참조하도록 할 것이다. 이는 부트로더 버전부터 시작해서 Flash Update에 맞춰서 하나씩 구현하면서 자세히 살펴볼 것이다
+그리고 자세한 부트로더 커맨드는 [다음](https://www.st.com/resource/en/application_note/cd00264342-usart-protocol-used-in-the-stm32-bootloader-stmicroelectronics.pdf)을 참조하도록 할 것이다. 이는 부트로더 버전부터 시작해서 Flash Update에 맞춰서 하나씩 구현하면서 자세히 살펴볼 것이다
 
 
 대략적으로 방향은 다음과 같을 것이다

@@ -63,7 +63,32 @@ categories: ST Bootloader
 ---
 ### Debug UART
 
+Command UART 외에 하나 더 Debug Message 용으로 하나 더 추가해야만 한다. 따라서 CubeMX에서 보드 Select로 프로젝트를 생성하면 사용할 수 있는 것이 USART1과 UART5가 남았다. 따라서 USART1은 VCP와 연결되어 있으므로 나머지 UART5를 사용할 것이다
 
+
+![10](https://drive.google.com/uc?id=1XPu7gXYVT3ep6FAL6aWvRftMR9pRGU-2)
+
+
+1. 그리고 코드 생성을 한 후 다음 코드를 추가한 후 UART 테스트를 하도록 한다
+
+
+    ```cpp
+    HAL_UART_Transmit(&huart5, (uint8_t*)("Hello World\r\n"), strlen((const char *)("Hello World\r\n")), HAL_MAX_DELAY);
+    uint32_t currentTick = HAL_GetTick();
+    while(HAL_GetTick() <= currentTick + 1000);
+    ```
+
+
+2. 코드 다운로드 후 실행을 시켜보도록 한다. 그리고 터미널을 열어 확인하도록 한다
+
+
+    ![11](https://drive.google.com/uc?id=1sAOl4VZsQQOAm7Wae8jydVl5sWFcbHix)
+
+
+3. 라이브러리 함수를 따로 만들도록 한다
+
+
+    ![12](https://drive.google.com/uc?id=19n2AEtv38tB_g7uw-x8SuuPIX_juV6Ug)
 
 
 ---

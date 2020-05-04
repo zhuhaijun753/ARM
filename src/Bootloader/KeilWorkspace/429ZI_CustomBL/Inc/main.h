@@ -48,6 +48,11 @@ extern "C" {
 /* Exported macro ------------------------------------------------------------*/
 /* USER CODE BEGIN EM */
 void jump_to_user_app(void);
+void read_bootloader_cmd(void);
+void print_debug_msg(char*);
+
+void bootloader_getver_cmd(uint8_t *);
+
 /* USER CODE END EM */
 
 /* Exported functions prototypes ---------------------------------------------*/
@@ -243,7 +248,9 @@ void Error_Handler(void);
 #define NBL1_Pin GPIO_PIN_1
 #define NBL1_GPIO_Port GPIOE
 /* USER CODE BEGIN Private defines */
-
+#define GET_VER 0x01
+#define GET_HELP 0x02
+#define GET_ID 0x03
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus

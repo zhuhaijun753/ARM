@@ -27,6 +27,10 @@ MCU가 리셋이 되면, 프로세서의 PC는 0번지를 가리키게 된다. �
 ![05](https://drive.google.com/uc?id=1IjeAOhCNvc3uvfJuYcuo8l8UHa1tGOSP)
 
 
+__나머지 NMI Handler, Main 함수 같은 경우는 Disassembly 창에서 확인할 수 있다.__
+
+![06](https://drive.google.com/uc?id=1myDvNslLlUYnLz0-CqzGFW5HGgYVUkoE)
+
 ---
 ### Boot Configuration
 

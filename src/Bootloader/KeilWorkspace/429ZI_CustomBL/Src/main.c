@@ -46,7 +46,8 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-
+#define MAX_CMD_LEN	256
+uint8_t cmd_rx_buffer[MAX_CMD_LEN];
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -102,13 +103,16 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+		#if 0
 			if(HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0) == GPIO_PIN_SET) {
-				// BootLoader Mode
+				read_bootloader_cmd();
 			}
 			else {
 				// Jump to User App
 				jump_to_user_app();
 			}
+		#endif
+		
   }
   /* USER CODE END 3 */
 }
@@ -159,7 +163,8 @@ void SystemClock_Config(void)
 /* USER CODE BEGIN 4 */
 #define USER_APP_FLASH_BASE_ADDR	0x08008000
 
-void jump_to_user_app(void) {
+void jump_to_user_app(void) 
+{
 	void (*app_reset_handler)(void);
 	
 	uint32_t msp_value = *(volatile uint32_t *)(USER_APP_FLASH_BASE_ADDR);
@@ -171,6 +176,36 @@ void jump_to_user_app(void) {
 	
 	app_reset_handler();
 }
+
+void read_bootloader_cmd(void)
+{
+	uint8_t cmd_len = 0;
+	
+	while(1) {
+		memset(cmd_rx_buffer, 0, MAX_CMD_LEN);
+		HAL_UART_Receive(&huart1, &cmd_rx_buffer[0], 1, HAL_MAX_DELAY);
+		cmd_len = cmd_rx_buffer[0];
+		HAL_UART_Receive(&huart1, &cmd_rx_buffer[1], cmd_len, HAL_MAX_DELAY);
+		
+		switch(cmd_rx_buffer[1]) {
+			case GET_VER:
+				// bootloader_getver_cmd(cmd_rx_buffer);
+				break;
+			case GET_HELP:
+				break;
+			case GET_ID:
+				break;
+			default:
+				break;
+		}
+	}
+}
+
+void print_debug_msg(char *msg)
+{
+	HAL_UART_Transmit(&huart5, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
+}
+
 /* USER CODE END 4 */
 
 /**
