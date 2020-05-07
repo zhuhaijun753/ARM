@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[Bootloader] Bootloader 커맨드 데이터 포맷 정의 및 버전 읽기"
+title:  "[Bootloader] 8. Bootloader 커맨드 데이터 포맷 정의 및 버전 읽기"
 date:   2020-04-08
 categories: ST Bootloader
 ---
@@ -83,12 +83,51 @@ categories: ST Bootloader
 
 
 ---
-### GET_VER 구현
+### GET_VER Flow Chart 구현
 
-그러면 GET_VER 명령이 입력되었을 때의 함수인 `bootloader_getver_cmd`을 구현하려고 한다
+그러면 GET_VER 명령이 입력되었을 때의 함수인 `bootloader_getver_cmd`을 구현하려고 한다. 먼저 `bootloader_getver_cmd`는 메세지 길이 이후에 나오는 커맨드가 일치했을 때 호출하게 된다
 
+그러면 함수에 들어갔을 때 바로 해야되는 것은 나머지 바이트에 포함되어 있는 CRC 체크를 해야만 한다. CRC가 맞지 않는다면 NACK을 보낸 후 함수를 종료하고, 그렇다면 ACK를 전달한 후 부트로더 버전을 담아서 보내주면 된다
 
+Flow Chart에 대해서는 PlantUML 이미지 추가하도록 한다
 
+정리하자면 공통적으로 모든 명령에서 사용할 것은 다음과 같다
+
+1. CRC 체크 함수
+2. ACK, NACK 보내는 함수
+3. 명령에 대한 답장을 보내는 함수
 
 ---
-9장은 부트로더 호스트 개발하기
+### ACK, NACK 함수 구현
+
+상황에 따라 호출하는 ACK, NACK을 호출하는 함수를 호출하려고 한다. ACK을 보낼 때는 ACK 후에 HOST가 받을 길이 정보도 추가적으로 담아서 보낼 것이다. 그리고 NACK은 NACK만 보내도록 할 것이다. 다음 장에서 HOST 개발을 할 것인데, 이때 ACK, NACK을 서로 약속해야만 한다. __따라서 ACK은 0xA5, NACK은 0x7F로 약속할 것이다.__
+
+1. ACK, NACK 정의
+
+    ```cpp
+    #define ACK     0xA5
+    #define NACK    0x7F
+    ```
+
+2. send_ack(길이)
+
+    ```cpp
+    void send_ack(int reply_len)
+    {
+        uint8_t ack_buf[2];
+        buf[0] = ACK;
+        buf[1] = reply_len;
+        HAL_UART_Transmit(&huart1, ack_buf, 2, HAL_MAX_DELAY);
+    }
+    ```
+
+3. send_nack()
+
+    ```cpp
+    void send_nack(void)
+    {
+        uint8_t nack;
+        nack = NACK;
+        HAL_UART_Transmit(&huart1, &nack, 1, HAL_MAX_DELAY);
+    }
+    ```

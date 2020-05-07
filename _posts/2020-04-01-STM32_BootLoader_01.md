@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[Bootloader] Bootloader 개요"
+title:  "[Bootloader] 1. Bootloader 개요"
 date:   2020-04-01
 categories: ST Bootloader
 ---

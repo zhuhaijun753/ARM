@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[Bootloader] ST 시스템 메모리 내장 부트로더 실행"
+title:  "[Bootloader] 4. ST 시스템 메모리 내장 부트로더 실행"
 date:   2020-04-04
 categories: ST Bootloader
 ---

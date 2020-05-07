@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[Bootloader] 부트로더 개발 환경 구성"
+title:  "[Bootloader] 3. 부트로더 개발 환경 구성"
 date:   2020-04-03
 categories: ST Bootloader
 ---

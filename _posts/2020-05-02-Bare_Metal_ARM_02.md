@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[Bare Metal Embedded] Build Process"
+title:  "[Bare Metal Embedded] "
 date:   2020-05-01
 categories: ARM bare_metal
 ---

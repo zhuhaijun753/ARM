@@ -52,7 +52,6 @@ void read_bootloader_cmd(void);
 void print_debug_msg(char*);
 
 void bootloader_getver_cmd(uint8_t *);
-
 /* USER CODE END EM */
 
 /* Exported functions prototypes ---------------------------------------------*/
@@ -248,6 +247,9 @@ void Error_Handler(void);
 #define NBL1_Pin GPIO_PIN_1
 #define NBL1_GPIO_Port GPIOE
 /* USER CODE BEGIN Private defines */
+#define ACK     0xA5
+#define NACK    0x7F
+
 #define GET_VER 0x01
 #define GET_HELP 0x02
 #define GET_ID 0x03

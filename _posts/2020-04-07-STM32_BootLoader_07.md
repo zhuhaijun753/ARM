@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[Bootloader] Bootloader에서 App 코드로 점프하기"
+title:  "[Bootloader] 7. Bootloader에서 App 코드로 점프하기"
 date:   2020-04-07
 categories: ST Bootloader
 ---

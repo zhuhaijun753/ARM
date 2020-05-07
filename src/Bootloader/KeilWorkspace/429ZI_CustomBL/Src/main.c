@@ -27,6 +27,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include <string.h>
+#include <stdio.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -93,7 +94,7 @@ int main(void)
   MX_CRC_Init();
   MX_UART5_Init();
   /* USER CODE BEGIN 2 */
-	
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -103,7 +104,6 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-		#if 0
 			if(HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_0) == GPIO_PIN_SET) {
 				read_bootloader_cmd();
 			}
@@ -111,8 +111,7 @@ int main(void)
 				// Jump to User App
 				jump_to_user_app();
 			}
-		#endif
-		
+
   }
   /* USER CODE END 3 */
 }
@@ -189,7 +188,7 @@ void read_bootloader_cmd(void)
 		
 		switch(cmd_rx_buffer[1]) {
 			case GET_VER:
-				// bootloader_getver_cmd(cmd_rx_buffer);
+				bootloader_getver_cmd(cmd_rx_buffer);
 				break;
 			case GET_HELP:
 				break;
@@ -205,6 +204,32 @@ void print_debug_msg(char *msg)
 {
 	HAL_UART_Transmit(&huart5, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
 }
+
+void send_ack(int reply_len)
+{
+		uint8_t ack_buf[2];
+		ack_buf[0] = ACK;
+		ack_buf[1] = reply_len;
+		HAL_UART_Transmit(&huart1, ack_buf, 2, HAL_MAX_DELAY);
+}
+
+void send_nack(void)
+{
+		uint8_t nack;
+		nack = NACK;
+		HAL_UART_Transmit(&huart1, &nack, 1, HAL_MAX_DELAY);
+}
+/*
+int check_crc(uint8_t *buffer, 
+
+void bootloader_getver_cmd(uint8_t* cmd_rx_buffer)
+{
+	;
+}
+*/
+
+
+
 
 /* USER CODE END 4 */
 
