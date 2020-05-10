@@ -1,8 +1,8 @@
 Dependencies for Project '429ZI_CustomBL', Target '429ZI_CustomBL': (DO NOT MODIFY !)
 CompilerVersion: 5060750::V5.06 update 6 (build 750)::ARMCC
 F (startup_stm32f429xx.s)(0x5EAE5B20)(--cpu Cortex-M4.fp.sp --pd "__EVAL SETA 1" -g --apcs=interwork --pd "__MICROLIB SETA 1"-I.\RTE\_429ZI_CustomBL-IC:\Users\yeong\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include-IC:\Users\yeong\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include--pd "__UVISION_VERSION SETA 529" --pd "_RTE_ SETA 1" --pd "STM32F429xx SETA 1"--list startup_stm32f429xx.lst --xref -o 429zi_custombl\startup_stm32f429xx.o --depend 429zi_custombl\startup_stm32f429xx.d)
-F (../Src/main.c)(0x5EB16A88)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_429ZI_CustomBL-IC:\Users\yeong\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include-IC:\Users\yeong\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="529" -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DSTM32F429xx-o 429zi_custombl\main.o --omf_browse 429zi_custombl\main.crf --depend 429zi_custombl\main.d)
-I (../Inc/main.h)(0x5EB169E6)
+F (../Src/main.c)(0x5EB75D9C)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_429ZI_CustomBL-IC:\Users\yeong\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include-IC:\Users\yeong\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="529" -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DSTM32F429xx-o 429zi_custombl\main.o --omf_browse 429zi_custombl\main.crf --depend 429zi_custombl\main.d)
+I (../Inc/main.h)(0x5EB75D81)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x5EA46AF5)
 I (../Inc/stm32f4xx_hal_conf.h)(0x5EAE5B1E)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x5EA46AF5)
@@ -37,9 +37,10 @@ I (../Inc/usart.h)(0x5EAE5B1E)
 I (../Inc/gpio.h)(0x5EAE5B1D)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5D9AC408)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5D9AC40A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdarg.h)(0x5D9AC40A)
 F (../Src/gpio.c)(0x5EAE5B1D)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_429ZI_CustomBL-IC:\Users\yeong\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include-IC:\Users\yeong\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="529" -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DSTM32F429xx-o 429zi_custombl\gpio.o --omf_browse 429zi_custombl\gpio.crf --depend 429zi_custombl\gpio.d)
 I (../Inc/gpio.h)(0x5EAE5B1D)
-I (../Inc/main.h)(0x5EB169E6)
+I (../Inc/main.h)(0x5EB75D81)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x5EA46AF5)
 I (../Inc/stm32f4xx_hal_conf.h)(0x5EAE5B1E)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x5EA46AF5)
@@ -69,9 +70,9 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h)(0x5EA46AF5
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x5EA46AF5)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x5EA46AF5)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x5EA46AF5)
-F (../Src/crc.c)(0x5EAE5B1D)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_429ZI_CustomBL-IC:\Users\yeong\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include-IC:\Users\yeong\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="529" -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DSTM32F429xx-o 429zi_custombl\crc.o --omf_browse 429zi_custombl\crc.crf --depend 429zi_custombl\crc.d)
+F (../Src/crc.c)(0x5EB188B4)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_429ZI_CustomBL-IC:\Users\yeong\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include-IC:\Users\yeong\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="529" -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DSTM32F429xx-o 429zi_custombl\crc.o --omf_browse 429zi_custombl\crc.crf --depend 429zi_custombl\crc.d)
 I (../Inc/crc.h)(0x5EAE5B1E)
-I (../Inc/main.h)(0x5EB169E6)
+I (../Inc/main.h)(0x5EB75D81)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x5EA46AF5)
 I (../Inc/stm32f4xx_hal_conf.h)(0x5EAE5B1E)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x5EA46AF5)
@@ -103,7 +104,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x5EA46AF5)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x5EA46AF5)
 F (../Src/usart.c)(0x5EAE5B1E)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_429ZI_CustomBL-IC:\Users\yeong\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include-IC:\Users\yeong\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="529" -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DSTM32F429xx-o 429zi_custombl\usart.o --omf_browse 429zi_custombl\usart.crf --depend 429zi_custombl\usart.d)
 I (../Inc/usart.h)(0x5EAE5B1E)
-I (../Inc/main.h)(0x5EB169E6)
+I (../Inc/main.h)(0x5EB75D81)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x5EA46AF5)
 I (../Inc/stm32f4xx_hal_conf.h)(0x5EAE5B1E)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x5EA46AF5)
@@ -134,7 +135,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h)(0x5EA46AF5)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x5EA46AF5)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x5EA46AF5)
 F (../Src/stm32f4xx_it.c)(0x5EAE5B1E)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_429ZI_CustomBL-IC:\Users\yeong\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include-IC:\Users\yeong\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="529" -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DSTM32F429xx-o 429zi_custombl\stm32f4xx_it.o --omf_browse 429zi_custombl\stm32f4xx_it.crf --depend 429zi_custombl\stm32f4xx_it.d)
-I (../Inc/main.h)(0x5EB169E6)
+I (../Inc/main.h)(0x5EB75D81)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x5EA46AF5)
 I (../Inc/stm32f4xx_hal_conf.h)(0x5EAE5B1E)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x5EA46AF5)
@@ -166,7 +167,7 @@ I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h)(0x5EA46AF5)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h)(0x5EA46AF5)
 I (../Inc/stm32f4xx_it.h)(0x5EAE5B1E)
 F (../Src/stm32f4xx_hal_msp.c)(0x5EAE5B1E)(--c99 -c --cpu Cortex-M4.fp.sp -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc -I ../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_429ZI_CustomBL-IC:\Users\yeong\AppData\Local\Arm\Packs\ARM\CMSIS\5.6.0\CMSIS\Core\Include-IC:\Users\yeong\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.14.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="529" -D_RTE_ -DSTM32F429xx -DUSE_HAL_DRIVER -DSTM32F429xx-o 429zi_custombl\stm32f4xx_hal_msp.o --omf_browse 429zi_custombl\stm32f4xx_hal_msp.crf --depend 429zi_custombl\stm32f4xx_hal_msp.d)
-I (../Inc/main.h)(0x5EB169E6)
+I (../Inc/main.h)(0x5EB75D81)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h)(0x5EA46AF5)
 I (../Inc/stm32f4xx_hal_conf.h)(0x5EAE5B1E)
 I (../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h)(0x5EA46AF5)

@@ -28,6 +28,7 @@
 /* USER CODE BEGIN Includes */
 #include <string.h>
 #include <stdio.h>
+#include <stdarg.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -200,9 +201,16 @@ void read_bootloader_cmd(void)
 	}
 }
 
-void print_debug_msg(char *msg)
+void print_debug_msg(char *format, ...)
 {
-	HAL_UART_Transmit(&huart5, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
+	char str[80];
+
+	/*Extract the the argument list using VA apis */
+	va_list args;
+	va_start(args, format);
+	vsprintf(str, format,args);
+	HAL_UART_Transmit(&huart5, (uint8_t*)str, strlen(str), HAL_MAX_DELAY);
+	va_end(args);
 }
 
 void send_ack(int reply_len)
@@ -219,15 +227,51 @@ void send_nack(void)
 		nack = NACK;
 		HAL_UART_Transmit(&huart1, &nack, 1, HAL_MAX_DELAY);
 }
-/*
-int check_crc(uint8_t *buffer, 
 
-void bootloader_getver_cmd(uint8_t* cmd_rx_buffer)
+uint8_t check_crc(uint8_t *pData, uint32_t len, uint32_t crc_host)
 {
-	;
+	uint32_t crcValue = 0xff;
+	
+	for(uint32_t i = 0; i < len; i++) {
+		uint32_t i_data = pData[i];
+		crcValue = HAL_CRC_Accumulate(&hcrc, &i_data, 1);
+	}
+	
+	if(crcValue == crc_host)
+	{
+		return 0;
+	}
+	else {
+		return 1;
+	}
 }
-*/
 
+void bootloader_getver_cmd(uint8_t *pBuffer)
+{
+	uint8_t bl_version;
+	
+	print_debug_msg("start bootloader_getver_cmd!\r\n");
+	
+	uint32_t command_len = pBuffer[0] + 1;
+	uint32_t host_crc = *((uint32_t *)(pBuffer + command_len - 4));
+	
+	if (! check_crc(&pBuffer[0],command_len-4,host_crc))
+    {
+        print_debug_msg("BL_DEBUG_MSG:checksum success !!\n");
+        // checksum is correct..
+        send_ack(1);
+        // bl_version=get_bootloader_version();
+        print_debug_msg("BL_DEBUG_MSG:BL_VER : %d %#x\n",bl_version,bl_version);
+        // bootloader_uart_write_data(&bl_version,1);
+
+    }else
+    {
+        print_debug_msg("BL_DEBUG_MSG:checksum fail !!\n");
+        //checksum is wrong send nack
+        send_nack();
+    }
+	
+}
 
 
 

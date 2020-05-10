@@ -131,3 +131,49 @@ Flow Chart에 대해서는 PlantUML 이미지 추가하도록 한다
         HAL_UART_Transmit(&huart1, &nack, 1, HAL_MAX_DELAY);
     }
     ```
+
+---
+### CRC 검사 함수 구현
+
+CRC Peripheral에 대해서 간략히 알아보고자 한다. CRC는 Cyclic Redundancy Check 데이터의 오류를 검출하는 기술이다. 오류는 감지하지만 수정은 하지 않는다는 것이 특징이다. 구현은 쉽지만 데이터 무결성에 있어서는 강력하다. STM에서 사용하는 CRC에 대한 내용은 다음 [링크](https://www.st.com/resource/en/application_note/dm00068118-using-the-crc-peripheral-in-the-stm32-family-stmicroelectronics.pdf)를 참조해서 쉽게 파악할 수 있다
+
+몇가지 그림을 통해서 STM에서의 CRC Peripheral 내부 동작을 알 수 있다
+
+1. Block Diagram
+
+
+    ![08](https://drive.google.com/uc?id=1-9Fr7OViAlNwrdt4Bx7j7I6B0PLCLi62)
+
+
+2. CRC 알고리즘 순서도 및 실제 계산법
+
+
+    ![09](https://drive.google.com/uc?id=13TczAkw8wXjA6AcDQgzCNdgVeXFkm7HM)
+
+
+    ![10](https://drive.google.com/uc?id=1Y0_XAjU26fseHXL1dnW0JNWmnE6tPHtm)
+
+
+3. STM 시리즈 안의 실제 CRC 초기값과 Poly 정의값
+
+
+    ![11](https://drive.google.com/uc?id=1kV7nom4I3KM5Qr-ovpGDblluuwLRaCzI) 
+
+
+4. 따라서 현재 부트로더에서 검사하는 CRC32는 HOST에서 전달된 CRC 값이다. 어떻게 구현이 되어 있는지 한 번 확인해보도록 하자. HOST는 단순 윈도우 프로그램이기 때문에, STM CRC 라이브러리를 사용할 수 없기 때문에, 직접 위 알고리즘대로 구현을 해야만 한다
+
+
+    ```python
+    def get_crc(buff, length):
+    Crc = 0xFFFFFFFF
+    for data in buff[0:length]:
+        Crc = Crc ^ data
+        for i in range(32):
+            if(Crc & 0x80000000):
+                Crc = (Crc << 1) ^ 0x04C11DB7
+            else:
+                Crc = (Crc << 1)
+    return Crc
+    ```
+
+

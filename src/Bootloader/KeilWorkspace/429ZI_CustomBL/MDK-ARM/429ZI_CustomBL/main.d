@@ -35,3 +35,4 @@
 429zi_custombl\main.o: ../Inc/gpio.h
 429zi_custombl\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 429zi_custombl\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+429zi_custombl\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdarg.h

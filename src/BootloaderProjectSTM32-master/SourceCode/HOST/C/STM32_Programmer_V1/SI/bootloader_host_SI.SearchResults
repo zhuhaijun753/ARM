@@ -1,0 +1,14 @@
+---- get_crc Matches (13 in 3 files) ----
+BlCommands.c (c:\users\yeong\desktop\git_doc\arm\src\bootloaderprojectstm32-master\sourcecode\host\c\stm32_programmer_v1\sources):        crc32       = get_crc(data_buf,COMMAND_BL_GET_VER_LEN-4);
+BlCommands.c (c:\users\yeong\desktop\git_doc\arm\src\bootloaderprojectstm32-master\sourcecode\host\c\stm32_programmer_v1\sources):        crc32       = get_crc(data_buf,COMMAND_BL_GET_HELP_LEN-4);
+BlCommands.c (c:\users\yeong\desktop\git_doc\arm\src\bootloaderprojectstm32-master\sourcecode\host\c\stm32_programmer_v1\sources):        crc32       = get_crc(data_buf,COMMAND_BL_GET_CID_LEN-4);
+BlCommands.c (c:\users\yeong\desktop\git_doc\arm\src\bootloaderprojectstm32-master\sourcecode\host\c\stm32_programmer_v1\sources):        crc32       = get_crc(data_buf,COMMAND_BL_GET_RDP_STATUS_LEN-4);
+BlCommands.c (c:\users\yeong\desktop\git_doc\arm\src\bootloaderprojectstm32-master\sourcecode\host\c\stm32_programmer_v1\sources):        crc32       = get_crc(data_buf,COMMAND_BL_GO_TO_ADDR_LEN-4);
+BlCommands.c (c:\users\yeong\desktop\git_doc\arm\src\bootloaderprojectstm32-master\sourcecode\host\c\stm32_programmer_v1\sources):        crc32       = get_crc(data_buf,COMMAND_BL_FLASH_ERASE_LEN-4);
+BlCommands.c (c:\users\yeong\desktop\git_doc\arm\src\bootloaderprojectstm32-master\sourcecode\host\c\stm32_programmer_v1\sources):            crc32       = get_crc(&data_buf[0],mem_write_cmd_total_len-4);
+BlCommands.c (c:\users\yeong\desktop\git_doc\arm\src\bootloaderprojectstm32-master\sourcecode\host\c\stm32_programmer_v1\sources):        crc32       = get_crc(data_buf,COMMAND_BL_EN_R_W_PROTECT_LEN-4);
+BlCommands.c (c:\users\yeong\desktop\git_doc\arm\src\bootloaderprojectstm32-master\sourcecode\host\c\stm32_programmer_v1\sources):        crc32       = get_crc(data_buf,COMMAND_BL_READ_SECTOR_P_STATUS_LEN-4);
+BlCommands.c (c:\users\yeong\desktop\git_doc\arm\src\bootloaderprojectstm32-master\sourcecode\host\c\stm32_programmer_v1\sources):        crc32       = get_crc(data_buf,COMMAND_BL_DIS_R_W_PROTECT_LEN-4);
+BlCommands.c (c:\users\yeong\desktop\git_doc\arm\src\bootloaderprojectstm32-master\sourcecode\host\c\stm32_programmer_v1\sources):        crc32       = get_crc(data_buf,COMMAND_BL_MY_NEW_COMMAND_LEN-4);
+Main.h (c:\users\yeong\desktop\git_doc\arm\src\bootloaderprojectstm32-master\sourcecode\host\c\stm32_programmer_v1\headers):uint32_t get_crc(uint8_t *buff, uint32_t len);
+Utilities.c (c:\users\yeong\desktop\git_doc\arm\src\bootloaderprojectstm32-master\sourcecode\host\c\stm32_programmer_v1\sources):uint32_t get_crc(uint8_t *buff, uint32_t len)

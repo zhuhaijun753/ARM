@@ -49,7 +49,7 @@ extern "C" {
 /* USER CODE BEGIN EM */
 void jump_to_user_app(void);
 void read_bootloader_cmd(void);
-void print_debug_msg(char*);
+void print_debug_msg(char *format, ...);
 
 void bootloader_getver_cmd(uint8_t *);
 /* USER CODE END EM */
