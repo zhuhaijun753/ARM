@@ -175,5 +175,3 @@ CRC Peripheral에 대해서 간략히 알아보고자 한다. CRC는 Cyclic Redu
                 Crc = (Crc << 1)
     return Crc
     ```
-
-

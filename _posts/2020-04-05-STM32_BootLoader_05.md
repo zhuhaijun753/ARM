@@ -10,7 +10,7 @@ categories: ST Bootloader
 ---
 ### Block Diagram
 
-전에 Native BootLoader를 실행해봤다. 이제 Custom 부트로더를 만들어보려고 한다. 큰 Block Diagram은 다음과 같다. __429ZI-DISC1으로 보드를 바꾸다보니, 기본 커맨드 통신은 USART1(VCP)로 나머지는 크게 방해되지 않는 선에서 아무 UART로 설정하려고 한다.__
+전에 Native BootLoader를 실행해봤다. 이제 Custom 부트로더를 만들어보려고 한다. 큰 Block Diagram은 다음과 같다. __429ZI-DISC1으로 보드를 바꾸다보니, 기본 커맨드 통신은 USART1(VCP)로 나머지는 크게 방해되지 않는 선에서 아무 UART로 설정하려고 한다. 현재 블록다이어그램을 수정해야 한다. USART1, UART5__
 
 
 ![01](https://drive.google.com/uc?id=1kM6vdEHMLCI8bn6P53VrdGp9hYEBVaqx)
